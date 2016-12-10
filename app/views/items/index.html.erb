@@ -1,0 +1,20 @@
+<h1>ToDo List</h1>
+
+<%= link_to 'New Item', new_item_path %>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Notes</th>
+	</tr>
+
+	<% @items.each do |item| %>
+		<tr>
+			<td><%= item.title %></td>
+			<td><%= item.notes %></td>
+			<td><%= link_to 'Show', item_path(item) %></td>
+			<td><%= link_to 'Edit', edit_item_path(item) %></td>
+			<td><%= link_to 'Delete', item_path(item), method: :delete %></td>
+		</tr>
+	<% end %>
+</table>
