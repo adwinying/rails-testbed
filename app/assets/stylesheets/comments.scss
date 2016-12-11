@@ -1,0 +1,27 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comments {
+	margin-top: 5rem;
+
+	h3 {
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #e6e6e6;
+	}
+}
+
+.comment {
+	padding-left: 2rem;
+	margin-bottom: 4rem;
+
+}
+
+.comment__content {
+
+	.comment__name {
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+
+}

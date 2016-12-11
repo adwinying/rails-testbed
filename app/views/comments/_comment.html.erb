@@ -1,0 +1,18 @@
+<div class="comment">
+	<div class="comment__content">
+		<p class="comment__name">
+			<strong><%= comment.name %></strong>
+		</p>
+		<p class="comment__time">
+			<%= time_ago_in_words(comment.created_at) %> ago
+		</p>
+		<p class="comment__body">
+			<%= comment.body %>
+		</p>
+	</div>
+
+	<%= link_to 'Delete Comment', [comment.post, comment],
+							method: :delete,
+							class: "btn btn-danger",
+							data: {confirm: "Are you sure?"} %>
+</div>

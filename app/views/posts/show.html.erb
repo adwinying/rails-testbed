@@ -18,4 +18,15 @@
 			<%= link_to "Delete Post", post_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 		</div><!-- /.col-xs-12 -->
 	</div><!-- /.row -->
+
+	<div class="row">
+		<div class="col-xs-12 comments">
+
+			<h3><%= pluralize(@post.comments.count, "Comment") %></h3>
+			<%= render @post.comments %>
+
+			<h3>Add a comment:</h3>
+			<%= render "comments/form" %>
+		</div>
+	</div>
 </div><!-- /.container -->
