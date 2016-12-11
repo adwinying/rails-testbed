@@ -1,7 +1,19 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>New Item</h1>
+			<h1>New ToDo</h1>
+			<h4>Create a new ToDo.</h4>
+
+			<% if @item.errors.any? %>
+				<div class="alert alert-danger">
+					<h3><%= pluralize(@item.errors.count, "error") %> prevent this ToDo from saving:</h3>
+					<ul>
+						<% @item.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul> 
+				</div>
+			<% end %>
 
 			<%= render 'form' %>
 
