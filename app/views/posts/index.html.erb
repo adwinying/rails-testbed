@@ -1,12 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			<% flash.each do |name,	msg| %>
-				<%= content_tag(:div, msg, class: "alert alert-info") %>
-			<% end %>
 
 			<h1>Blog</h1>
-			<h4>A simple blog.</h4><br>
+			<h4>A simple blog. Login with test account to edit and delete posts and comments.</h4><br>
 
 			<% @posts.each do |post| %>
 				<div class="post_wrapper">

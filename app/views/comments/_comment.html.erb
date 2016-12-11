@@ -10,9 +10,11 @@
 			<%= comment.body %>
 		</p>
 	</div>
-
-	<%= link_to 'Delete Comment', [comment.post, comment],
-							method: :delete,
-							class: "btn btn-danger",
-							data: {confirm: "Are you sure?"} %>
+	
+	<% if user_signed_in? %>
+		<%= link_to 'Delete Comment', [comment.post, comment],
+								method: :delete,
+								class: "btn btn-danger",
+								data: {confirm: "Are you sure?"} %>
+	<% end %>
 </div>

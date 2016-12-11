@@ -48,16 +48,29 @@
 		    	<% end %>
 	    		<% if params[:controller] == "posts" %>
 						<li><%= link_to "New Post", new_post_path, class: "btn btn-primary" %></li>
-		    		<li><a href="#">Log In</a></li>
+						<% if user_signed_in? %>
+							<li><a href="/users/sign_out">Log Out</a></li>
+						<% else %>
+			    		<li><a href="#">Log In</a></li>
+			    	<% end %>
 		    	<% end %>
 	    	</ul>
 	    </div><!-- /.navbar-collapse -->
 
 		</div><!-- /.container -->
 	</nav>
-	
 
-<%= yield %>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<% flash.each do |name,	msg| %>
+					<%= content_tag(:div, msg, class: "alert alert-info") %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+	<%= yield %>
 
 </body>
 </html>
