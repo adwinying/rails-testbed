@@ -1,15 +1,15 @@
 <%= form_for @item do |f| %>
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</p>
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
 
-	<p>
-		<%= f.label :notes %><br>
-		<%= f.text_area :notes %>
-	</p>
+	<div class="form-group">
+		<%= f.label :notes %>
+		<%= f.text_area :notes, class: "form-control", rows: "5" %>
+	</div>
 
-	<p>
-		<%= f.submit %>
-	</p>
+	<%= link_to 'Back', items_path, class: "btn btn-default" %>
+	<%= f.submit class: "btn btn-primary" %>
+	
 <% end %>

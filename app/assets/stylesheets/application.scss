@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+//@import 'bootstrap-sprockets';
+//@import 'bootstrap';
+@import 'bootswatch';
+
+body {
+	-webkit-font-smoothing: antialiased;
+	margin-top: 60px;
+}
+
+.navbar-brand {
+	img {
+		height: 100%;
+	}	
+}

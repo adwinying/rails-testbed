@@ -1,11 +1,22 @@
-<p>
-	<strong>Title:</strong>
-	<%= @item.title %>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Success!</h1>
+			<h4>ToDo Entry Generated.</h4>
 
-<p>
-	<strong>Text:</strong>
-	<%= @item.notes %>
-</p>
+			<br>
 
-<%= link_to 'Back', items_path %>
+			<h3>Title:</h3>			
+			<p>
+				<%= @item.title %>
+			</p>
+	
+			<h3>Notes:</h3>
+			<p>
+				<%= @item.notes %>
+			</p>
+
+			<%= link_to 'Back', items_path, class: "btn btn-default" %>
+		</div><!-- /.col-xs-12 -->
+	</div><!-- /.row -->
+</div><!-- /.container -->

@@ -1,11 +1,19 @@
-<h1 class="title">
-	<%= @post.title %>
-</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="title">
+				<%= @post.title %>
+			</h1>
 
-<p class="date">
-	Submitted <%= time_ago_in_words(@post.created_at) %> ago
-</p>
+			<h4 class="date">
+				Submitted <%= time_ago_in_words(@post.created_at) %> ago
+			</h4>
 
-<p class="body">
-	<%= @post.body %>
-</p>
+			<p class="body">
+				<%= @post.body %>
+			</p>
+
+			<%= link_to "Back to Blog", posts_path, class: "btn btn-default" %>
+		</div><!-- /.col-xs-12 -->
+	</div><!-- /.row -->
+</div><!-- /.container -->

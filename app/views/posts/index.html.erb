@@ -1,10 +1,24 @@
-<% @posts.each do |post| %>
-	<div class="post_wrapper">
-		<h2 class="title">
-			<%= link_to post.title, post %>
-		</h2>
-		<p class="date">
-			<%= post.created_at.strftime("%B, %d, %Y") %>
-		</p>
-	</div>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<% flash.each do |name,	msg| %>
+				<%= content_tag(:div, msg, class: "alert alert-info") %>
+			<% end %>
+
+			<h1>Blog</h1>
+			<h4>A simple blog.</h4><br>
+
+			<% @posts.each do |post| %>
+				<div class="post_wrapper">
+					<h2 class="title">
+						<%= link_to post.title, post %>
+					</h2>
+					<p class="date">
+						<%= post.created_at.strftime("%B, %d, %Y") %>
+					</p>
+				</div>
+				<hr>
+			<% end %>
+		</div><!-- /.col-xs-12 -->
+	</div><!-- /.row -->
+</div><!-- /.container -->
