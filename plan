@@ -1,21 +1,10 @@
-@Recipe Box
+@pin board
 
-#Overview
-- CRUD recipes
+#install
+-haml
+-boostrap
+-simpleform
 
-- Each recipe includes pic, description, ingredients, 
-	instructions
-	-> 3 models: pic+desc, ingre, instr
+#objects
+- pin
 
-- Users (Sign In & Sign Out)
-	-> Account required to create recipe
-	-> Only recipe owner can edit/delete recipe
-
-- Create recipe
-	-> All 3 models are present
-
-=========================================================
-
-#add users
-- update recipe show view
-	-> Show edit/del buttons to owner only
