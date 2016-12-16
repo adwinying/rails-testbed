@@ -1,0 +1,24 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+span.error {
+	display: none;
+}
+
+img {
+	width: 100%;
+}
+
+.recipe__entry h3 {
+	text-align: center;
+}
+
+.recipe__image {
+	margin-top: 28px;
+}
+
+.recipe__ingredient,
+.recipe__instruction {
+	margin-bottom: 10px;
+}

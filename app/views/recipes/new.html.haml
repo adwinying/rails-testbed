@@ -1,0 +1,18 @@
+.container
+	.row
+		.col-xs-12
+			- if @recipe.errors.any?
+				.alert.alert-danger
+					%h3 
+						= pluralize(@recipe.errors.count, 'errors')
+						prevented this post from saving:
+					%ul
+						- @recipe.errors.full_messages.each do |msg|
+							%li= msg
+
+	.row
+		.col-xs-12
+			%h1 New Recipe
+			%h4 Create a new recipe. All fields are required.
+
+	= render 'form'

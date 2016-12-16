@@ -1,0 +1,101 @@
+!!! 5
+%html
+  %head
+    %title
+      Rails Testbed - iAdwin
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-toggle": "collapse", 
+            "data-target": "#thenav", 
+            "aria-expanded": "false",
+            "type": "button"}
+            %span.sr-only
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "iAdwin - Rails Testbed", root_path, class: "navbar-brand"
+
+        .collapse.navbar-collapse#thenav
+          %ul.nav.navbar-nav
+            %li= link_to "ToDo", items_path
+            %li= link_to "Blog", posts_path
+            %li= link_to "Recipe Box", recipes_path
+            %li.dropdown
+              %a.dropdown-toggle{href: "#", 
+                "data-toggle": "dropdown", 
+                role: "button",
+                "aria-haspopup": "true",
+                "aria-expanded": "false"}
+                Pages
+                %span.caret
+                %ul.dropdown-menu
+                  %li= link_to "About", about_path
+                  %li
+                    %a{href: "//twitter.com/adw1n"}
+                      Twitter
+                  %li
+                    %a{href: "//instagram.com/adw1n"}
+                      Instagram
+                  %li
+                    %a{href: "//github.com/adwinying"}
+                      Github
+                  %li
+                    %a{href: "mailto:admin@iadw.in"}
+                      Email
+                  %li.divider{"role": "separator"}
+                  %li
+                    %a{href: "//iadw.in"}
+                      iAdwin
+
+          %ul.nav.navbar-nav.navbar-right
+            - if params[:controller] == "items"
+              %li
+                = link_to 'New Item', new_item_path, class: "btn btn-primary"
+
+            - if params[:controller] == "posts"
+              %li
+                = link_to 'New Post', new_post_path, class: "btn btn-primary"
+              - if user_signed_in?
+                %li
+                  = link_to 'Log Out',
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: {confirm: "Are you sure?"}
+              - else
+                %li
+                  = link_to 'Log In',
+                    new_user_session_path
+
+            - if params[:controller] == "recipes"
+              %li
+                = link_to 'New Recipe',
+                  new_recipe_path,
+                  class: "btn btn-primary"
+              - if user_signed_in?
+                %li
+                  = link_to 'Log Out',
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: {confirm: "Are you sure?"}
+              - else
+                %li
+                  = link_to 'Sign Up',
+                    new_user_registration_path
+                %li
+                  = link_to 'Log In',
+                    new_user_session_path
+
+    .container
+      .row
+        .col-xs-12
+          - flash.each do |name, msg|
+            .alert.alert-info= msg
+
+    = yield
+    

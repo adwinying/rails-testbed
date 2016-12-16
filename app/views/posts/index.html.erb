@@ -13,6 +13,9 @@
 					<p class="date">
 						<%= post.created_at.strftime("%B, %d, %Y") %>
 					</p>
+					<p class="excerpt">
+						<%= truncate(post.body, length: 300) %>
+					</p>
 				</div>
 				<hr>
 			<% end %>

@@ -1,0 +1,14 @@
+.container
+	.row
+		.col-xs-12
+			%h1 Recipe Box
+			%h4 A place to gather all kinds of recipes.
+
+	- @recipes.each_slice(3) do |slice|
+		.row
+			- slice.each do |recipe|
+				.col-xs-12.col-sm-4.recipe__entry
+					= link_to recipe, class: "thumbnail" do
+						= image_tag(recipe.image.url(:medium))
+						%h3= recipe.name
+						

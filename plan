@@ -1,0 +1,21 @@
+@Recipe Box
+
+#Overview
+- CRUD recipes
+
+- Each recipe includes pic, description, ingredients, 
+	instructions
+	-> 3 models: pic+desc, ingre, instr
+
+- Users (Sign In & Sign Out)
+	-> Account required to create recipe
+	-> Only recipe owner can edit/delete recipe
+
+- Create recipe
+	-> All 3 models are present
+
+=========================================================
+
+#add users
+- update recipe show view
+	-> Show edit/del buttons to owner only

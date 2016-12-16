@@ -10,7 +10,7 @@
 			</h4>
 
 			<p class="body">
-				<%= @post.body %>
+				<%= simple_format(@post.body) %>
 			</p>
 
 			<%= link_to "Back to Blog", posts_path, class: "btn btn-default" %>
